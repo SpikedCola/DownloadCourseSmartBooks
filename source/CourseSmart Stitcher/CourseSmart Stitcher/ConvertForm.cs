@@ -27,7 +27,7 @@ namespace CourseSmart_Stitcher
         /// <summary>
         /// Padding around ActiveX object, to ensure form is larger than control
         /// </summary>
-        const int FormPadding = 100;
+        const int FormPadding = 300;
 
         public ConvertForm()
         {
@@ -89,9 +89,11 @@ namespace CourseSmart_Stitcher
             this.Height = OutputSize.Height + FormPadding;
 
             // move form off screen so it doesnt bother anyone (surprisingly it still captures fine)
-            int maxHeight = Screen.PrimaryScreen.Bounds.Height;
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(0, maxHeight + 1);
+            // 2014-02-24: user reported all-white PDF pages being created
+            // by keeping the form on-screen the problem was fixed
+            // int maxHeight = Screen.PrimaryScreen.Bounds.Height;
+            // this.StartPosition = FormStartPosition.Manual;
+            // this.Location = new Point(0, maxHeight + 1);
 
             // load movie & resize
             axShockwaveFlash1.Movie = inputFile;
