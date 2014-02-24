@@ -20,10 +20,6 @@ namespace CourseSmart_Stitcher
         public MainForm()
         {
             InitializeComponent();
-
-            // testing
-            inputTB.Text = @"C:\Users\J Skoba\Downloads\book\out2";
-            outputTB.Text = @"C:\Users\J Skoba\Downloads\book\out2\test.pdf";
         }
 
         private void inputFolderBtn_Click(object sender, EventArgs e)
